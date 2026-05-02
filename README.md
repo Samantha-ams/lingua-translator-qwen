@@ -5,13 +5,13 @@ Focused on user experience, responsiveness, and lightweight AI integration.
 
 ---
 
-## 🚀 Preview
+##  Preview
 
 *(Add a screenshot or GIF here if possible)*
 
 ---
 
-## 🧠 Tech Stack
+##  Tech Stack
 
 * Python (Flask)
 * HuggingFace Transformers
@@ -63,7 +63,7 @@ English · Spanish · Korean · French · Japanese · German
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 * Language pill buttons (no dropdowns)
 * ⇅ Swap languages (also swaps input text)
