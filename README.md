@@ -1,8 +1,26 @@
-# Lingua — AI Translator
+# Lingua — Local AI Translator
 
-A beautiful, interactive translator web app powered by **Qwen2-0.5B** running fully locally.
+A clean, interactive web translator powered by **Qwen2-0.5B**, running fully locally.
+Focused on user experience, responsiveness, and lightweight AI integration.
 
-## Project structure
+---
+
+## 🚀 Preview
+
+*(Add a screenshot or GIF here if possible)*
+
+---
+
+## 🧠 Tech Stack
+
+* Python (Flask)
+* HuggingFace Transformers
+* Qwen2-0.5B (local LLM)
+* HTML, CSS, JavaScript (vanilla)
+
+---
+
+## 📁 Project Structure
 
 ```
 translator_app/
@@ -15,26 +33,62 @@ translator_app/
     └── script.js          # All interactivity (no framework)
 ```
 
-## Setup
+---
+
+## ⚙️ Setup
+
+1. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+2. Run the app:
+
+```bash
 python app.py
 ```
 
-Open http://localhost:5000
+3. Open in your browser:
 
-## Supported languages
+```
+http://localhost:5000
+```
+
+---
+
+## 🌍 Supported Languages
+
 English · Spanish · Korean · French · Japanese · German
 
-## Key features
-- Language pill buttons (no dropdowns)
-- ⇅ Swap languages (also swaps input text)
-- Character counter with colour warnings
-- Spinner loading state on translate button
-- Formatted output: original + styled translation block
-- One-click copy with checkmark confirmation
-- Clear button
-- Ctrl/Cmd + Enter shortcut to translate
-- Conflict highlight when source == target
-- Responsive (mobile-first)
+---
+
+## ✨ Key Features
+
+* Language pill buttons (no dropdowns)
+* ⇅ Swap languages (also swaps input text)
+* Character counter with visual warnings
+* Loading spinner during translation
+* Clean output display (original + translation)
+* One-click copy with confirmation
+* Clear input button
+* Ctrl/Cmd + Enter shortcut
+* Conflict detection (same source & target)
+* Fully responsive (mobile-first)
+
+---
+
+## ⚠️ Notes
+
+This app uses a lightweight local model (**Qwen2-0.5B**), so translations may not always be perfect.
+The main focus of this project is **UI/UX design and local AI integration**, not translation accuracy.
+
+---
+
+## 💡 Future Improvements
+
+* Better translation model integration
+* Streaming responses
+* Language auto-detection
+* Translation history
+
