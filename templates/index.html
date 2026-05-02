@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lingua — AI Translator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+
+  <!-- ── Ambient background orbs ── -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <div class="app-shell">
+
+    <!-- ── Header ── -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">ℒ</span>
+        <span class="logo-name">Lingua</span>
+      </div>
+      <p class="tagline">Translate with precision</p>
+    </header>
+
+    <!-- ── Main card ── -->
+    <main class="card">
+
+      <!-- ── Language selector row ── -->
+      <div class="lang-row">
+
+        <!-- Source language pills -->
+        <div class="lang-group" id="source-group">
+          <span class="lang-label">FROM</span>
+          <div class="pills" role="group" aria-label="Source language">
+            <button class="pill active" data-lang="en" data-group="source">🇺🇸 English</button>
+            <button class="pill" data-lang="es" data-group="source">🇲🇽 Spanish</button>
+            <button class="pill" data-lang="ko" data-group="source">🇰🇷 Korean</button>
+            <button class="pill" data-lang="fr" data-group="source">🇫🇷 French</button>
+            <button class="pill" data-lang="ja" data-group="source">🇯🇵 Japanese</button>
+            <button class="pill" data-lang="de" data-group="source">🇩🇪 German</button>
+          </div>
+        </div>
+
+        <!-- Swap button -->
+        <button class="swap-btn" id="swap-btn" title="Swap languages" aria-label="Swap languages">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 16V4m0 0L3 8m4-4l4 4"/>
+            <path d="M17 8v12m0 0l4-4m-4 4l-4-4"/>
+          </svg>
+        </button>
+
+        <!-- Target language pills -->
+        <div class="lang-group" id="target-group">
+          <span class="lang-label">TO</span>
+          <div class="pills" role="group" aria-label="Target language">
+            <button class="pill" data-lang="en" data-group="target">🇺🇸 English</button>
+            <button class="pill active" data-lang="es" data-group="target">🇲🇽 Spanish</button>
+            <button class="pill" data-lang="ko" data-group="target">🇰🇷 Korean</button>
+            <button class="pill" data-lang="fr" data-group="target">🇫🇷 French</button>
+            <button class="pill" data-lang="ja" data-group="target">🇯🇵 Japanese</button>
+            <button class="pill" data-lang="de" data-group="target">🇩🇪 German</button>
+          </div>
+        </div>
+
+      </div><!-- /lang-row -->
+
+      <!-- ── Divider ── -->
+      <div class="card-divider"></div>
+
+      <!-- ── Input + Output panes ── -->
+      <div class="panes">
+
+        <!-- Input pane -->
+        <div class="pane pane-input">
+          <div class="pane-header">
+            <span class="pane-badge" id="source-badge">English</span>
+            <div class="pane-actions">
+              <button class="icon-btn" id="clear-btn" title="Clear input" aria-label="Clear input">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <textarea
+            id="input-text"
+            placeholder="Type or paste text to translate…"
+            maxlength="1000"
+            aria-label="Text to translate"
+            spellcheck="true"
+          ></textarea>
+          <div class="pane-footer">
+            <span class="char-count"><span id="char-count">0</span> / 1000</span>
+            <button class="translate-btn" id="translate-btn">
+              <span class="btn-label">Translate</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Vertical separator -->
+        <div class="pane-sep"></div>
+
+        <!-- Output pane -->
+        <div class="pane pane-output" id="output-pane">
+          <div class="pane-header">
+            <span class="pane-badge" id="target-badge">Spanish</span>
+            <div class="pane-actions">
+              <button class="icon-btn" id="copy-btn" title="Copy translation" aria-label="Copy translation" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Empty state (plain div, styled via ::before / ::after) -->
+          <div id="output-empty" class="output-placeholder"></div>
+
+          <!-- Error state -->
+          <div id="output-error" hidden>
+            <div class="error-container">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="error-icon">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <p id="error-message"></p>
+            </div>
+          </div>
+
+          <!-- Result blocks -->
+          <div class="output-result" id="output-result" hidden>
+            <div class="result-block result-original">
+              <span class="result-label">Original</span>
+              <p class="result-text" id="result-original"></p>
+            </div>
+            <div class="result-block result-translated">
+              <span class="result-label">Translation</span>
+              <p class="result-text result-main" id="result-translated"></p>
+            </div>
+          </div>
+
+        </div><!-- /pane-output -->
+
+      </div><!-- /panes -->
+
+    </main><!-- /card -->
+
+    <footer class="footer">
+      Powered by <strong>Qwen2-0.5B</strong> · running locally
+    </footer>
+
+  </div><!-- /app-shell -->
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
