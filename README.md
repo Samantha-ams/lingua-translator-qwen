@@ -7,7 +7,8 @@ Focused on user experience, responsiveness, and lightweight AI integration.
 
 ##  Preview
 
-*(Add a screenshot or GIF here if possible)*
+<img width="1090" height="615" alt="image" src="https://github.com/user-attachments/assets/280fa546-3d14-40ff-97a6-666ebbf2d1b1" />
+
 
 ---
 
