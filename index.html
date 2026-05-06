@@ -3,44 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lingua â€” AI Translator</title>
+  <title>Lingua - AI Translator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./static/styles.css" />
 </head>
 <body>
 
-  <!-- â”€â”€ Ambient background orbs â”€â”€ -->
+  <!-- Ambient background -->
   <div class="bg-orb orb-1"></div>
   <div class="bg-orb orb-2"></div>
 
   <div class="app-shell">
 
-    <!-- â”€â”€ Header â”€â”€ -->
+    <!-- Header -->
     <header class="header">
       <div class="logo">
-        <span class="logo-icon">â„’</span>
+        <span class="logo-icon">L</span>
         <span class="logo-name">Lingua</span>
       </div>
       <p class="tagline">Translate with precision</p>
     </header>
 
-    <!-- â”€â”€ Main card â”€â”€ -->
+    <!-- Main card -->
     <main class="card">
 
-      <!-- â”€â”€ Language selector row â”€â”€ -->
+      <!-- Language selector row -->
       <div class="lang-row">
 
         <!-- Source language pills -->
         <div class="lang-group" id="source-group">
           <span class="lang-label">FROM</span>
           <div class="pills" role="group" aria-label="Source language">
-            <button class="pill active" data-lang="en" data-group="source">ðŸ‡ºðŸ‡¸ English</button>
-            <button class="pill" data-lang="es" data-group="source">ðŸ‡²ðŸ‡½ Spanish</button>
-            <button class="pill" data-lang="ko" data-group="source">ðŸ‡°ðŸ‡· Korean</button>
-            <button class="pill" data-lang="fr" data-group="source">ðŸ‡«ðŸ‡· French</button>
-            <button class="pill" data-lang="ja" data-group="source">ðŸ‡¯ðŸ‡µ Japanese</button>
-            <button class="pill" data-lang="de" data-group="source">ðŸ‡©ðŸ‡ª German</button>
+            <button class="pill active" data-lang="en" data-group="source">English</button>
+            <button class="pill" data-lang="es" data-group="source">Spanish</button>
+            <button class="pill" data-lang="ko" data-group="source">Korean</button>
+            <button class="pill" data-lang="fr" data-group="source">French</button>
+            <button class="pill" data-lang="ja" data-group="source">Japanese</button>
+            <button class="pill" data-lang="de" data-group="source">German</button>
           </div>
         </div>
 
@@ -56,21 +56,21 @@
         <div class="lang-group" id="target-group">
           <span class="lang-label">TO</span>
           <div class="pills" role="group" aria-label="Target language">
-            <button class="pill" data-lang="en" data-group="target">ðŸ‡ºðŸ‡¸ English</button>
-            <button class="pill active" data-lang="es" data-group="target">ðŸ‡²ðŸ‡½ Spanish</button>
-            <button class="pill" data-lang="ko" data-group="target">ðŸ‡°ðŸ‡· Korean</button>
-            <button class="pill" data-lang="fr" data-group="target">ðŸ‡«ðŸ‡· French</button>
-            <button class="pill" data-lang="ja" data-group="target">ðŸ‡¯ðŸ‡µ Japanese</button>
-            <button class="pill" data-lang="de" data-group="target">ðŸ‡©ðŸ‡ª German</button>
+            <button class="pill" data-lang="en" data-group="target">English</button>
+            <button class="pill active" data-lang="es" data-group="target">Spanish</button>
+            <button class="pill" data-lang="ko" data-group="target">Korean</button>
+            <button class="pill" data-lang="fr" data-group="target">French</button>
+            <button class="pill" data-lang="ja" data-group="target">Japanese</button>
+            <button class="pill" data-lang="de" data-group="target">German</button>
           </div>
         </div>
 
       </div><!-- /lang-row -->
 
-      <!-- â”€â”€ Divider â”€â”€ -->
+      <!-- Divider -->
       <div class="card-divider"></div>
 
-      <!-- â”€â”€ Input + Output panes â”€â”€ -->
+      <!-- Input + Output panes -->
       <div class="panes">
 
         <!-- Input pane -->
@@ -87,7 +87,7 @@
           </div>
           <textarea
             id="input-text"
-            placeholder="Type or paste text to translateâ€¦"
+            placeholder="Type or paste text to translate..."
             maxlength="1000"
             aria-label="Text to translate"
             spellcheck="true"
@@ -149,7 +149,7 @@
     </main><!-- /card -->
 
     <footer class="footer">
-      Powered by <strong>Qwen2-0.5B</strong> Â· running locally
+      GitHub Pages preview - Flask/Qwen version in the repository
     </footer>
 
   </div><!-- /app-shell -->
@@ -157,3 +157,4 @@
   <script src="./static/script.js"></script>
 </body>
 </html>
+

@@ -14,12 +14,25 @@ const LANG_NAMES = {
   fr: 'French', ja: 'Japanese', de: 'German',
 };
 
+const API_LANG_CODES = {
+  en: 'en',
+  es: 'es',
+  ko: 'ko',
+  fr: 'fr',
+  ja: 'ja',
+  de: 'de',
+};
+
 const DEMO_TRANSLATIONS = {
   'en:es': {
     hello: 'hola',
     'good morning': 'buenos dias',
     'thank you': 'gracias',
     'how are you?': 'como estas?',
+    'i like soccer': 'me gusta el futbol',
+    'i like soccer.': 'me gusta el futbol.',
+    'i play soccer': 'juego futbol',
+    'i love soccer': 'me encanta el futbol',
     'i love learning languages': 'me encanta aprender idiomas',
   },
   'es:en': {
@@ -27,6 +40,10 @@ const DEMO_TRANSLATIONS = {
     gracias: 'thank you',
     'buenos dias': 'good morning',
     'como estas?': 'how are you?',
+    'me gusta el futbol': 'i like soccer',
+    'me gusta el futbol.': 'i like soccer.',
+    'juego futbol': 'i play soccer',
+    'me encanta el futbol': 'i love soccer',
     'me encanta aprender idiomas': 'i love learning languages',
   },
   'en:fr': { hello: 'bonjour', 'thank you': 'merci', 'good morning': 'bonjour' },
@@ -129,17 +146,50 @@ async function doTranslate() {
   setLoading(true);
   showEmpty();
 
-  await new Promise(resolve => setTimeout(resolve, 450));
-  showResult(text, demoTranslate(text, state.source, state.target));
-  setLoading(false);
+  try {
+    const translation = await translateText(text, state.source, state.target);
+    showResult(text, translation);
+  } catch (err) {
+    showError(err.message || 'Translation failed. Please try again.');
+  } finally {
+    setLoading(false);
+  }
 }
 
-function demoTranslate(text, source, target) {
+async function translateText(text, source, target) {
+  const local = localTranslate(text, source, target);
+  if (local) return local;
+
+  const sourceCode = API_LANG_CODES[source];
+  const targetCode = API_LANG_CODES[target];
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceCode}|${targetCode}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('Translation service unavailable.');
+
+  const data = await res.json();
+  const translated = data?.responseData?.translatedText?.trim();
+  if (translated) return translated;
+
+  return simpleFallback(text, source, target);
+}
+
+function localTranslate(text, source, target) {
   const dictionary = DEMO_TRANSLATIONS[`${source}:${target}`] || {};
   const exact = dictionary[text.toLowerCase()];
   if (exact) return preserveCapitalization(text, exact);
 
-  return `[Demo ${LANG_NAMES[source]} -> ${LANG_NAMES[target]}] ${text}`;
+  return '';
+}
+
+function simpleFallback(text, source, target) {
+  const words = DEMO_TRANSLATIONS[`${source}:${target}`] || {};
+  const translated = text.replace(/[A-Za-z]+(?:'[A-Za-z]+)?/g, word => {
+    return words[word.toLowerCase()] || word;
+  });
+
+  return translated === text
+    ? `Translation unavailable for this phrase. Try another sentence.`
+    : translated;
 }
 
 function preserveCapitalization(input, output) {
