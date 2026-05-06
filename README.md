@@ -1,7 +1,9 @@
-﻿# Lingua â€” Local AI Translator
+﻿# Lingua - Local AI Translator
 
 A clean, interactive web translator powered by **Qwen2-0.5B**, running fully locally.
-Focused on user experience, responsiveness, and lightweight AI integration.`r`n`r`n**Live demo:** https://samantha-ams.github.io/lingua-translator-qwen/
+Focused on user experience, responsiveness, and lightweight AI integration.
+
+**Live demo:** https://samantha-ams.github.io/lingua-translator-qwen/
 
 ---
 
@@ -92,5 +94,4 @@ The main focus of this project is **UI/UX design and local AI integration**, not
 * Streaming responses
 * Language auto-detection
 * Translation history
-
 
