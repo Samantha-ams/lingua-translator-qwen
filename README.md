@@ -1,7 +1,7 @@
-# Lingua — Local AI Translator
+﻿# Lingua â€” Local AI Translator
 
 A clean, interactive web translator powered by **Qwen2-0.5B**, running fully locally.
-Focused on user experience, responsiveness, and lightweight AI integration.
+Focused on user experience, responsiveness, and lightweight AI integration.`r`n`r`n**Live demo:** https://samantha-ams.github.io/lingua-translator-qwen/
 
 ---
 
@@ -21,22 +21,22 @@ Focused on user experience, responsiveness, and lightweight AI integration.
 
 ---
 
-## 📁 Project Structure
+## ðŸ“ Project Structure
 
 ```
 translator_app/
-├── app.py                 # Flask backend + model inference
-├── requirements.txt
-├── templates/
-│   └── index.html         # Single-page UI
-└── static/
-    ├── styles.css         # Full design system
-    └── script.js          # All interactivity (no framework)
+â”œâ”€â”€ app.py                 # Flask backend + model inference
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ templates/
+â”‚   â””â”€â”€ index.html         # Single-page UI
+â””â”€â”€ static/
+    â”œâ”€â”€ styles.css         # Full design system
+    â””â”€â”€ script.js          # All interactivity (no framework)
 ```
 
 ---
 
-## ⚙️ Setup
+## âš™ï¸ Setup
 
 1. Install dependencies:
 
@@ -58,16 +58,16 @@ http://localhost:5000
 
 ---
 
-## 🌍 Supported Languages
+## ðŸŒ Supported Languages
 
-English · Spanish · Korean · French · Japanese · German
+English Â· Spanish Â· Korean Â· French Â· Japanese Â· German
 
 ---
 
 ##  Key Features
 
 * Language pill buttons (no dropdowns)
-* ⇅ Swap languages (also swaps input text)
+* â‡… Swap languages (also swaps input text)
 * Character counter with visual warnings
 * Loading spinner during translation
 * Clean output display (original + translation)
@@ -79,17 +79,18 @@ English · Spanish · Korean · French · Japanese · German
 
 ---
 
-## ⚠️ Notes
+## âš ï¸ Notes
 
 This app uses a lightweight local model (**Qwen2-0.5B**), so translations may not always be perfect.
 The main focus of this project is **UI/UX design and local AI integration**, not translation accuracy.
 
 ---
 
-## 💡 Future Improvements
+## ðŸ’¡ Future Improvements
 
 * Better translation model integration
 * Streaming responses
 * Language auto-detection
 * Translation history
+
 
