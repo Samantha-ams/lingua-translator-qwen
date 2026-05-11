@@ -1,97 +1,119 @@
-﻿# Lingua - Local AI Translator
+# Lingua - Local AI Translator
 
-A clean, interactive web translator powered by **Qwen2-0.5B**, running fully locally.
-Focused on user experience, responsiveness, and lightweight AI integration.
-
-**Live demo:** https://samantha-ams.github.io/lingua-translator-qwen/
+A clean, interactive web translator powered by Qwen2-0.5B, running fully locally. Focused on user experience, responsiveness, and lightweight AI integration.
 
 ---
 
-##  Preview
+## 🌐 Live Demo
 
-<img width="1090" height="615" alt="image" src="https://github.com/user-attachments/assets/280fa546-3d14-40ff-97a6-666ebbf2d1b1" />
-
-
----
-
-##  Tech Stack
-
-* Python (Flask)
-* HuggingFace Transformers
-* Qwen2-0.5B (local LLM)
-* HTML, CSS, JavaScript (vanilla)
+https://samantha-ams.github.io/lingua-translator-qwen/
 
 ---
 
-## ðŸ“ Project Structure
+## 📸 Preview
 
-```
+![Preview](image.png)
+
+---
+
+## 🛠 Tech Stack
+
+- Python (Flask)
+- HuggingFace Transformers
+- Qwen2-0.5B (Local LLM)
+- HTML
+- CSS
+- JavaScript (Vanilla)
+
+---
+
+## 📁 Project Structure
+
+```bash
 translator_app/
-â”œâ”€â”€ app.py                 # Flask backend + model inference
-â”œâ”€â”€ requirements.txt
-â”œâ”€â”€ templates/
-â”‚   â””â”€â”€ index.html         # Single-page UI
-â””â”€â”€ static/
-    â”œâ”€â”€ styles.css         # Full design system
-    â””â”€â”€ script.js          # All interactivity (no framework)
+├── app.py                 # Flask backend + model inference
+├── requirements.txt
+├── templates/
+│   └── index.html         # Single-page UI
+└── static/
+    ├── styles.css         # Full design system
+    └── script.js          # Frontend interactivity
 ```
 
 ---
 
-## âš™ï¸ Setup
+## ⚙️ Setup
 
-1. Install dependencies:
+### 1. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Run the app:
+### 2. Run the application
 
 ```bash
 python app.py
 ```
 
-3. Open in your browser:
+### 3. Open in your browser
 
-```
+```txt
 http://localhost:5000
 ```
 
 ---
 
-## ðŸŒ Supported Languages
+## 🌍 Supported Languages
 
-English Â· Spanish Â· Korean Â· French Â· Japanese Â· German
-
----
-
-##  Key Features
-
-* Language pill buttons (no dropdowns)
-* â‡… Swap languages (also swaps input text)
-* Character counter with visual warnings
-* Loading spinner during translation
-* Clean output display (original + translation)
-* One-click copy with confirmation
-* Clear input button
-* Ctrl/Cmd + Enter shortcut
-* Conflict detection (same source & target)
-* Fully responsive (mobile-first)
+- English
+- Spanish
+- Korean
+- French
+- Japanese
+- German
 
 ---
 
-## âš ï¸ Notes
+## ✨ Key Features
 
-This app uses a lightweight local model (**Qwen2-0.5B**), so translations may not always be perfect.
-The main focus of this project is **UI/UX design and local AI integration**, not translation accuracy.
+- Language pill buttons (no dropdown menus)
+- ⇄ Swap languages with one click
+- Input character counter
+- Visual warning system
+- Loading spinner during translation
+- Clean translation output
+- Copy-to-clipboard button
+- Clear input button
+- Ctrl/Cmd + Enter shortcut
+- Conflict detection for same-language translation
+- Fully responsive design
 
 ---
 
-## ðŸ’¡ Future Improvements
+## ⚠️ Notes
 
-* Better translation model integration
-* Streaming responses
-* Language auto-detection
-* Translation history
+This project uses a lightweight local model (**Qwen2-0.5B**), so translation quality may vary depending on the language pair and prompt complexity.
 
+The main focus of this project is:
+- UI/UX design
+- Local AI integration
+- Lightweight deployment
+- Interactive frontend experience
+
+---
+
+## 💡 Future Improvements
+
+- Better translation model integration
+- Streaming responses
+- Automatic language detection
+- Translation history
+- Dark/light mode toggle
+- Docker support
+
+---
+
+## 👩‍💻 Author
+
+Samantha Aislinn Melo Salgado
