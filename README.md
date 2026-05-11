@@ -12,7 +12,7 @@ https://samantha-ams.github.io/lingua-translator-qwen/
 
 ## 📸 Preview
 
-![Preview](image.png)
+<img width="1090" height="615" alt="Screenshot 2026-05-02 015456" src="https://github.com/user-attachments/assets/e2093608-5cb9-4807-85aa-a882fc7ba829" />
 
 ---
 
